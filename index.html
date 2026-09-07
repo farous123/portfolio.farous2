@@ -45,10 +45,10 @@ section>*{position:relative;z-index:10}
 .nav-brand .n1{font-size:15px;font-weight:800;letter-spacing:.02em;color:var(--text)}
 .nav-brand .n2{font-family:'Courier New',Consolas,Menlo,monospace;font-size:9px;color:var(--teal);letter-spacing:.15em;text-transform:uppercase}
 .nav-links{display:flex;gap:32px;font-size:14px;font-weight:500}
-.nav-links a{color:var(--text2);text-decoration:none;transition:.3s;position:relative}
-.nav-links a:hover{color:var(--teal)}
+.nav-links a{color:var(--text2);text-decoration:none;transition:.3s;position:relative;touch-action:manipulation}
+.nav-links a:hover,.nav-links a.touch-active{color:var(--teal)}
 .nav-cta{background:var(--gold);color:var(--navy);font-weight:800;font-size:12.5px;letter-spacing:.04em;padding:11px 24px;border-radius:40px;text-decoration:none;transition:.3s;box-shadow:0 0 20px rgba(200,134,42,.18);text-transform:uppercase}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 0 34px rgba(200,134,42,.30)}
+.nav-cta:hover,.nav-cta.touch-active{transform:translateY(-2px);box-shadow:0 0 34px rgba(200,134,42,.30)}
 @media(max-width:900px){.nav-links{display:none}}
 
 .eyebrow{font-family:'Courier New',Consolas,Menlo,monospace;font-size:11px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:10px}
@@ -78,10 +78,10 @@ section>*{position:relative;z-index:10}
 .hero-sub{font-size:18px;font-weight:300;color:var(--text2);margin-bottom:36px;max-width:600px;line-height:1.85}
 .hero-meta{font-family:'Courier New',Consolas,Menlo,monospace;font-size:12px;color:var(--text3);margin-bottom:50px;letter-spacing:.1em}
 .hero-cta{display:flex;gap:16px;justify-content:center;margin-bottom:64px;flex-wrap:wrap}
-.btn-primary{background:var(--teal);color:var(--navy);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;padding:15px 34px;border-radius:40px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 0 30px rgba(154,165,177,.22);text-decoration:none;display:inline-block;letter-spacing:.02em}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(154,165,177,.30)}
-.btn-ghost{background:transparent;color:var(--gold);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;padding:14px 34px;border-radius:40px;border:1px solid var(--gold-border);cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);text-decoration:none;display:inline-block;letter-spacing:.02em}
-.btn-ghost:hover{background:var(--gold3);box-shadow:var(--glow-gold)}
+.btn-primary{background:var(--teal);color:var(--navy);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;padding:15px 34px;border-radius:40px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 0 30px rgba(154,165,177,.22);text-decoration:none;display:inline-block;letter-spacing:.02em;touch-action:manipulation}
+.btn-primary:hover,.btn-primary.touch-active{transform:translateY(-2px);box-shadow:0 0 50px rgba(154,165,177,.30)}
+.btn-ghost{background:transparent;color:var(--gold);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;padding:14px 34px;border-radius:40px;border:1px solid var(--gold-border);cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);text-decoration:none;display:inline-block;letter-spacing:.02em;touch-action:manipulation}
+.btn-ghost:hover,.btn-ghost.touch-active{background:var(--gold3);box-shadow:var(--glow-gold)}
 .hero-stats{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--border2);padding-top:44px;width:100%;max-width:720px}
 .hero-stat{padding:10px 36px;text-align:center;position:relative}
 .hero-stat::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:var(--border)}
@@ -121,8 +121,8 @@ section>*{position:relative;z-index:10}
 #projects{background:var(--navy2)}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .proj-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--border2);aspect-ratio:4/3;cursor:pointer;background:var(--navy3)}
-.proj-card img.proj-cover{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-.proj-card:hover img.proj-cover{transform:scale(1.06)}
+.proj-card img.proj-cover{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1);touch-action:manipulation}
+.proj-card:hover img.proj-cover,.proj-card.touch-active img.proj-cover{transform:scale(1.06)}
 .proj-info{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(2,9,18,.94) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;transition:.35s}
 .proj-title{font-size:14.5px;font-weight:700;color:var(--text);font-family:'Space Grotesk',sans-serif}
 .proj-loc{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
@@ -137,8 +137,9 @@ section>*{position:relative;z-index:10}
 .lightbox{position:fixed;inset:0;background:rgba(2,9,18,.96);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(10px)}
 .lightbox.active{display:flex}
 .lightbox img{max-width:88vw;max-height:80vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.lightbox-close{position:absolute;top:24px;right:32px;color:var(--text);font-size:32px;cursor:pointer;background:rgba(255,255,255,.08);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:var(--text);font-size:28px;cursor:pointer;background:rgba(255,255,255,.08);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;user-select:none}
+.lightbox-close{position:absolute;top:24px;right:32px;color:var(--text);font-size:32px;cursor:pointer;background:rgba(255,255,255,.08);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s;touch-action:manipulation}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:var(--text);font-size:28px;cursor:pointer;background:rgba(255,255,255,.08);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;user-select:none;transition:background .2s;touch-action:manipulation}
+.lightbox-close.touch-active,.lightbox-nav.touch-active{background:rgba(255,255,255,.22)}
 .lightbox-prev{left:24px}.lightbox-next{right:24px}
 .lightbox-caption{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:12px}
 
@@ -484,7 +485,59 @@ document.getElementById('lightbox').addEventListener('click', (e) => { if(e.targ
 document.getElementById('lbPrev').addEventListener('click', () => { const p = PROJECTS[lbGroup]; lbIndex = (lbIndex - 1 + p.images.length) % p.images.length; updateLightbox(); });
 document.getElementById('lbNext').addEventListener('click', () => { const p = PROJECTS[lbGroup]; lbIndex = (lbIndex + 1) % p.images.length; updateLightbox(); });
 
+// Touch swipe support for lightbox (mobile)
+(function(){
+  const lb = document.getElementById('lightbox');
+  let touchStartX = 0, touchStartY = 0, touchEndX = 0, touchEndY = 0;
+  const SWIPE_THRESHOLD = 40; // minimum px distance to count as a swipe
+
+  lb.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  lb.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe(){
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy)) return; // not a horizontal swipe
+    const p = PROJECTS[lbGroup];
+    if (dx < 0) {
+      // swiped left -> next image
+      lbIndex = (lbIndex + 1) % p.images.length;
+    } else {
+      // swiped right -> previous image
+      lbIndex = (lbIndex - 1 + p.images.length) % p.images.length;
+    }
+    updateLightbox();
+  }
+})();
+
 renderProjects();
+
+// Global touchstart support for all buttons/links/cards (immediate tap feedback on touch devices)
+(function(){
+  const TOUCH_SELECTOR = '.nav-links a, .nav-cta, .btn-primary, .btn-ghost, .lightbox-close, .lightbox-nav, .proj-card';
+
+  document.addEventListener('touchstart', (e) => {
+    const el = e.target.closest(TOUCH_SELECTOR);
+    if (el) el.classList.add('touch-active');
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const el = e.target.closest(TOUCH_SELECTOR);
+    if (el) setTimeout(() => el.classList.remove('touch-active'), 150);
+  }, { passive: true });
+
+  document.addEventListener('touchcancel', () => {
+    document.querySelectorAll('.touch-active').forEach(el => el.classList.remove('touch-active'));
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
